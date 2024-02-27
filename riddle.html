@@ -57,6 +57,22 @@
     #final-image {
       display: none;
     }
+
+    button {
+            font-family: monospace;
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border: 1px solid white;
+            font-size: 24px;
+            text-decoration: none; /* Remove underlines */
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: white;
+            color: black;
+        }
   </style>
 </head>
 <body>
@@ -66,13 +82,16 @@
   </div>
 
   <div id="final-image">
-    <img src="assets\loveyou.png" alt="Final Image">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <p>It's not over<span><a href="https://youtu.be/8I4Qvl8gZ6k?si=jhxqWVHpgYIn4ij4&t=21">.</a></span></p>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <p style="color: black;">You did it! Probably a lot quicker than I expected you to, as usual. But I kept one last secret up my sleeve. To find the ending you seek, look into your love's eyes while you listen to the song. The answer is right under their nose.</p>
   </div>
 
   <script>
     let currentQuestion = 0;
     const questions = [
-      { question: "Let's start off easy: My favorite day of 2023", answer: "10/14" },
+      { question: "Oi mate, where do you throw paste that has gone bad? _____.___/6QLYc3C6", answer: "Heart" },
     ];
 
     function displayQuestion() {
@@ -118,12 +137,23 @@
     function showFinalImage() {
       document.getElementById("command-prompt").style.display = "none";
       document.getElementById("final-image").style.display = "block";
+      
+      const hintButton = document.getElementById("hint-button");
+      if (hintButton) {
+        hintButton.style.display = "none";
+      }
+    }
+
+    function showHint() {
+      if (confirm("Are you sure?")) {
+        const outputElement = document.getElementById("output");
+        outputElement.innerHTML += `<div><br><br>I hide between those numbers, I hide within these words, and I hide safe and quiet, where I see no light. <br> Who am I?</div>`;
+      }
     }
 
     displayQuestion();
   </script>
+  <br><br><br><br>
+  <button id="hint-button" onclick="showHint()">Show hint</button>
 </body>
 </html>
-
-
-
