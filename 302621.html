@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Checker</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            text-align: center;
+        }
+        #text-block {
+            display: none;
+            margin-top: 20px;
+            font-size: 18px;
+            color: white;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: monospace;
+            background-color: black;
+            color: white;
+            text-align: center;
+            background-size: cover; /* Ensures the background covers the entire page */
+            background-position: center; /* Centers the background image */
+            background-repeat: no-repeat; /* Prevents the background image from repeating */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #container {
+            text-align: center;
+            margin: 70px;
+        }
+
+        h1 {
+            font-size: 48px;
+        }
+
+        p {
+            font-size: 24px;
+        }
+
+        #output {
+            white-space: pre-line;
+            height: 200px;
+            overflow-y: scroll;
+            border: 1px solid white;
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        input {
+            font-family: monospace;
+            width: calc(100% - 20px);
+            padding: 5px;
+            margin: 5px;
+            border: none;
+            background-color: black;
+            color: white;
+            outline: none;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        #final-image {
+            display: none;
+        }
+
+        #gif {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        button {
+            font-family: monospace;
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border: 1px solid white;
+            font-size: 24px;
+            text-decoration: none; /* Remove underlines */
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        #top-right-button {
+            display: none;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="top-right-button" onclick="displayText()">Need a hint?</button>
+
+    <div id="container">
+        <p>I was born on the 19th of the blood-month, once thousand, 9 times one hundered, once ninety, and eight...<br> Find me, find my code.</p>
+        <input type="text" id="inputField" placeholder="Enter code">
+        <br><br>
+        <button onclick="checkInput()">Submit</button>
+        <div id="text-block">
+            Now, how many friends do I have?<br>
+        </div>
+    </div>
+
+    <script>
+        var isSeventyInput = false;
+    
+        function checkInput() {
+            var input = parseInt(document.getElementById("inputField").value, 10);
+            var textBlock = document.getElementById("text-block");
+    
+            if (input === 70) {
+                textBlock.style.display = "block";
+                isSeventyInput = true;
+            } else if (isSeventyInput && input >= 40 && input <= 80) {
+                window.location.href = "16.html";
+            } else if (input === 60 && !isSeventyInput) {
+                textBlock.style.display = "none";
+            }
+        }
+
+        function displayText() {
+        alert("google then count");
+    }
+
+    // Show button after 15 minutes
+    setTimeout(function() {
+        document.getElementById("top-right-button").style.display = "block";
+    }, 900000); // 900000 ms = 15 minutes
+    </script>
+    
+</body>
+</html> 
